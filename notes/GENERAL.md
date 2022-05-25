@@ -7,6 +7,17 @@
 - For records with multiple officers (eg: Stops), do we want to append all officer info to the same record, or expand vertically (create an additional record for the second officer)
 - Datatypes: do we want to format numbers in a certain way?
 
+### Issues w/ Names
+- What happens when a female officer gets married and changes her last name? eg a potential is:
+```
+---- In officer_profile
+"26063","DAISY","ROMERO","","","",1990,"HISPANIC","FEMALE","8/31/15",""
+---- In UOF file
+10510,2017-00381,2017-11-12 10:09:00,71XX EMERALD AVE,19562711,DAISY,CRUZ,7,,502.0,125.0,FEMALE,HISPANIC,1990.0,723,True,True,FEMALE,BLACK,2000.0,2017-11-12,10,,,,,,,,,,,,,,,,,
+```
+- We might need to fuzz names at times, especially in cases such as O'Brien or O Boyle, where the name might appear with or without an apostrophe etc
+- Sometimes, such as in the UOF data, suffixes are appended to the last name
+
 ### Arrests
 - Officer data in this file is a little more sparse than others. Will probably need to use a number of tricks to 
 - Looks like officers involved in a number of arrests are duplicated by `fbi_code`. EG:
