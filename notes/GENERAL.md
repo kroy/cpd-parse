@@ -4,11 +4,11 @@
 
 ### File organization
 - How do we want to order rows? Date of incident? Incident number? By officer?
-- For records with multiple officers (eg: Stops), do we want to append all officer info to the same record, or expand vertically (create an additional record for the second officer)
+- For rows/records with multiple officers (eg: Stops), do we want to append all officer info to the same record, or expand vertically (create an additional record for the second officer)
 - Datatypes: do we want to format numbers in a certain way?
 
 ### Issues w/ Names
-- What happens when a female officer gets married and changes her last name? eg a potential is:
+- What happens when a female officer gets married and changes her last name? a potential example is:
 ```
 ---- In officer_profile
 "26063","DAISY","ROMERO","","","",1990,"HISPANIC","FEMALE","8/31/15",""
@@ -43,7 +43,9 @@
 2020-12-25T19:09:00Z,19,2020-12-25,65XX S DR MARTIN LUTHER KING JR DR,Second Arresting Officer,DARNELL,MAGNY,12870,WRT,725 ILCS 5.0/110-3,MALE,BLACK,21
 2020-12-25T19:09:00Z,19,2020-12-25,65XX S DR MARTIN LUTHER KING JR DR,Assisting Arresting Officer,JUSTIN,PETERS,10103,WRT,725 ILCS 5.0/110-3,MALE,BLACK,21
 ```
-- Can we dedupe over fbi-code for a given arrest incident?
+- Can we dedupe over `fbi_code` for a given arrest incident?
+- What is `fbi_code`? Is it [UCR Code](https://ucr.fbi.gov/nibrs/2011/resources/nibrs-offense-codes/at_download/file)
+  - More likely this one [CPD crime details](https://gis.chicagopolice.org/pages/crime_details)
 - How do we identify an "arrest incident"?
 
 ### Stops
@@ -67,7 +69,6 @@
 ### Use of Force
 - The first UOF record w/ an officer name attached seems to be around 10192 (record number 10191), which occured on `2017-10-16`
   -  Related to John Gianopulos, born 1971, started on the force 9/11/2000
-- The `time` column is scalar, and probably represents the hour of the day (in 24 hr format)
 - First-pass filter seems like it should be `[off_first_name, off_last_name, off_race, off_sex, off_birth_year]`
 - Multiple officers involved in (what seem to be) the same use of force incident are included in separate rows. eg:
 ```
