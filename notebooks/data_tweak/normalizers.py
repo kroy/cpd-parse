@@ -7,7 +7,7 @@ def normalize_sex(sex: str) -> str:
     return "NA"
 
 def normalize_race(race: str) -> str:
-  if race in ["WHITE", "BLACK", "HISPANIC", "ASIAN/PACIFIC ISLANDER", "NATIVE AMERICAN/ALASKAN NATIVE"]:
+  if (race in ["WHITE", "BLACK", "HISPANIC", "ASIAN/PACIFIC ISLANDER", "NATIVE AMERICAN/ALASKAN NATIVE"]):
     return race
   elif race == "WHITE HISPANIC":
     return "HISPANIC"
