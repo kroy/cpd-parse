@@ -79,3 +79,11 @@
 ```
 - The `off_assigned_beat` column is interesting. In the multi-officer example of uof at 31xx Harrison St, which appears to be [here](https://goo.gl/maps/jZxTn3fzdDqZKecP6) and is in the [11th District 1134 Beat](https://chicagopolicedept-my.sharepoint.com/personal/gisteam_chicagopolice_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fgisteam%5Fchicagopolice%5Forg%2FDocuments%2FDistrict%20PDFs%2Fdistrict11%2Epdf&parent=%2Fpersonal%2Fgisteam%5Fchicagopolice%5Forg%2FDocuments%2FDistrict%20PDFs&ga=1), the officers involved were assigned the beat `6730`. I haven't found a corresponding beat for `6730`.
   - More generally, an officer can be assigned a beat and use force in a different beat's area, or not assigned any beat (because they're off duty or something similar), or can be assigned a beat not tied to a specific geographic area.
+
+
+- Need to recreate the officer profiles file from the information we have in the other files, assign a unique identifier
+- Then add a column to each of the files (arrests, stops, uof) that identifies the officer(s) related to the data
+- Process:
+  - If there's exactly one match for a given officer in the event file + profiles file, then assign the id to row in the events file
+  - otherwise, if there are more than one match for a given event, put them into an "ambiguous" file to be refined
+  - if there are no matches for a given event, put the event record into a separate file for a wider filter pass
