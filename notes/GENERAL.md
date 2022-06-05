@@ -18,6 +18,9 @@
 - We might need to fuzz names at times, especially in cases such as O'Brien or O Boyle, where the name might appear with or without an apostrophe etc
 - Sometimes, such as in the UOF data, suffixes are appended to the last name
 
+### Issues with Star field
+- Stars are re-used across officers
+
 ### Arrests
 - Officer data in this file is a little more sparse than others. Will probably need to use a number of tricks to 
 - Looks like officers involved in a number of arrests are duplicated by `fbi_code`. EG:
