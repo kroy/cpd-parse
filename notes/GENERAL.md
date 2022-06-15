@@ -1,3 +1,6 @@
+### Other potential sources of Data
+- https://data.cityofchicago.org/Administration-Finance/Current-Employee-Names-Salaries-and-Position-Title/xzkq-xp2w
+- 
 ### File Verification
 - Might be useful to have a way for others to verify that the input files we use match ones they can get from public data
 - Checksum might work, but doesn't allow flexibility in minor data transformations (like changing column names, normalizing data etc)

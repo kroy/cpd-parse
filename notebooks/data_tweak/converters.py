@@ -2,8 +2,8 @@ from collections.abc import Callable
 import pandas as pd
 from data_tweak.normalizers import normalize_race, normalize_sex
 
-def convert_datetime(df: pd.DataFrame, datetime_col: str = "date_time") -> None:
-  df[datetime_col] = pd.to_datetime(df[datetime_col])
+def convert_datetime(df: pd.DataFrame, datetime_col: str = "date_time", format: str = None) -> None:
+  df[datetime_col] = pd.to_datetime(df[datetime_col], format=format)
 
 def convert_race(df: pd.DataFrame, race_cols: list[str]) -> None:
   convert_cols(df, race_cols, normalize_race)
