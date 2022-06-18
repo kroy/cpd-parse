@@ -1,3 +1,5 @@
+import numpy as np
+
 def normalize_sex(sex: str) -> str:
   if (sex == "M" or sex == "MALE"):
     return "MALE"
@@ -14,4 +16,4 @@ def normalize_race(race: str) -> str:
   elif race in ["AMER IND/ALASKAN NATIVE", "NATIVE AMERICAN"]:
     return "NATIVE AMERICAN/ALASKAN NATIVE"
   else:
-    return race
+    return np.nan
